@@ -1,0 +1,9 @@
+{% extends 'menu/Base.html' %}
+
+{% block base %}
+<form action="{% url 'edit_entry' description.id %}" method='post' style="text-align:center; margin-top:50px;">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button name="submit" class="button">сохранить</button>
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'menu/Base.html' %}
+
+{% block base %}
+{% for el in topic %}
+  <div style="border:3px solid black; width:700px; margin:auto; margin-top:20px; font-size:40px;">
+    <a href="{% url 'description' el.id %}"><center>{{el}}</center></a>
+  </div >
+{% empty %}
+<p style="font-size:40px; margin-top:20px; text-indent:15px;">Администратор не добавил ни одной темы :(</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'menu/Base.html' %}
+
+{% block base %}
+<form action="{% url 'new_description' topic.id %}" method='post' style="text-align:center; margin-top:50px;">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class="button" style="text-align:center; margin-top:50px;">Отправить</button>
+</form>
+{% endblock %}
